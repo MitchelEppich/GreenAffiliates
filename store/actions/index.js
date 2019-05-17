@@ -16,16 +16,17 @@ const uri = "http://localhost:3000/graphql";
 const imports = {};
 
 const actionTypes = {
-  // TOGGLE_SEARCH: "TOGGLE_SEARCH"
+  SEND_DATA: "SEND_DATA"
 };
 
 const actions = {
-  // toggleSearch: input => {
-  //   return {
-  //     type: actionTypes.TOGGLE_SEARCH,
-  //     input: input
-  //   };
-  // }
+  sendData: data => {
+    console.log(data);
+
+    return {
+      type: actionTypes.SEND_DATA
+    };
+  }
 };
 
 const query = {};

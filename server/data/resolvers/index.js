@@ -2,14 +2,14 @@ const nodemailer = require("nodemailer");
 
 const emailTemplates = require("../emails");
 
-const aws = require("aws-sdk");
+// const aws = require("aws-sdk");
 
-aws.config.update({
-  accessKeyId: process.env.AWS_ACCESS_KEY,
-  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
-});
+// aws.config.update({
+//   accessKeyId: process.env.AWS_ACCESS_KEY,
+//   secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
+// });
 
-const s3Bucket = process.env.S3_BUCKET;
+// const s3Bucket = process.env.S3_BUCKET;
 
 const resolvers = {
   Query: {

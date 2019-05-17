@@ -44,23 +44,26 @@ let defaultConfig = require("tailwindcss/defaultConfig")();
 let colors = {
   transparent: "transparent",
   "semi-transparent": "rgba(250, 250, 250, 0.2)",
-  "almost-transparent": "rgba(250, 250, 250, 0.06)", //Added - Fhelipe
   "almost-white": "rgba(255, 255, 255, 0.7)",
-  "almost-black": "rgba(0,0,0,0.9)",
+  "almost-black": "rgba(0,0,0,0.5)",
+  "light-brown": "#F0DECA",
+  cream: "#FFFCCF",
+  "transparent-grey": "rgba(50,50,50,0.8)",
 
   black: "#000",
-
+  "grey-darkest": "#3d4852",
+  "grey-darker": "#606f7b",
+  "grey-dark": "#8795a1",
   grey: "#202020",
-  "light-grey": "#808080",
-  "transparent-grey": "rgba(76, 75, 75, 0.35)",
-
+  "grey-light": "#dae1e7",
+  "grey-lighter": "#f1f5f8",
+  "grey-lightest": "#f8fafc",
   white: "#ffffff",
 
   "red-darkest": "#3b0d0c",
   "red-darker": "#621b18",
   "red-dark": "#cc1f1a",
   red: "#e3342f",
-  "red-solid": "#ff0000",
   "red-light": "#ef5753",
   "red-lighter": "#f9acaa",
   "red-lightest": "#fcebea",
@@ -81,16 +84,53 @@ let colors = {
   "yellow-lighter": "#fff9c2",
   "yellow-lightest": "#fcfbeb",
 
-  blue: "#4B77BE",
-
   "green-darkest": "#0f2f21",
   "green-darker": "#1a4731",
   "green-dark": "#1f9d55",
-  green: "#38c172",
+  green: "#00B800",
+  "green-light": "#51d88a",
+  "green-lighter": "#a2f5bf",
+  "green-lightest": "#e3fcec",
+
+  "teal-darkest": "#0d3331",
+  "teal-darker": "#20504f",
+  "teal-dark": "#38a89d",
   teal: "#4dc0b5",
-  "barely-teal": "rgba(78, 193, 181, 0.25)",
-  barStatus: "#c5c13f",
-  authBar: "#c5c13f"
+  "teal-light": "#64d5ca",
+  "teal-lighter": "#a0f0ed",
+  "teal-lightest": "#e8fffe",
+
+  "blue-darkest": "#12283a",
+  "blue-darker": "#1c3d5a",
+  "blue-dark": "#2779bd",
+  blue: "#3490dc",
+  "blue-light": "#6cb2eb",
+  "blue-lighter": "#bcdefa",
+  "blue-lightest": "#eff8ff",
+
+  "indigo-darkest": "#191e38",
+  "indigo-darker": "#2f365f",
+  "indigo-dark": "#5661b3",
+  indigo: "#6574cd",
+  "indigo-light": "#7886d7",
+  "indigo-lighter": "#b2b7ff",
+  "indigo-lightest": "#e6e8ff",
+
+  "purple-darkest": "#21183c",
+  "purple-darker": "#382b5f",
+  "purple-dark": "#794acf",
+  purple: "#9561e2",
+  "purple-light": "#a779e9",
+  "purple-lighter": "#d6bbfc",
+  "purple-lightest": "#f3ebff",
+
+  "pink-darkest": "#451225",
+  "pink-darker": "#6f213f",
+  "pink-dark": "#eb5286",
+  pink: "#f66d9b",
+  "pink-light": "#fa7ea8",
+  "pink-lighter": "#ffbbca",
+  "pink-lightest": "#ffebef"
 };
 
 module.exports = {
@@ -128,23 +168,12 @@ module.exports = {
   |
   */
 
-  // screens: {
-  //   //sm: { min: "100px", max: "576px" },
-  //   sm: { min: "100px", max: "1100px" }, // CHANGED - Fhelipe (-1 to not display 2 elements in the same size)
-  //   md: { min: "1100px", max: "1300px" }, // CHANGED - Fhelipe (-1 to not display 2 elements in the same size)
-  //   lg: { min: "1300px", max: "1999px" },
-  //   xl: { min: "1200px" }
-  // },
-
   screens: {
-    // ADDED Fhelipe - ORIGINAL SIZES
-    //sm: { min: "100px", max: "576px" },
-    sm: { min: "100px", max: "767px" },
-    md: { min: "768px", max: "991px" },
-    lg: { min: "992px", max: "1249px" },
-    xl: { min: "1250px", max: "1599px" },
-    xxl: { min: "1600px", max: "2399px" },
-    xxxl: { min: "2400px" }
+    sm: { min: "100px", max: "479px" },
+    md: { min: "480px", max: "767px" },
+    lg: { min: "768px", max: "991px" },
+    xl: { min: "992px", max: "1367px" },
+    xxl: { min: "1368px", max: "9999px" }
   },
 
   /*
@@ -165,7 +194,42 @@ module.exports = {
   |
   */
 
-  fonts: {},
+  fonts: {
+    sans: [
+      "system-ui",
+      "BlinkMacSystemFont",
+      "-apple-system",
+      "Segoe UI",
+      "Roboto",
+      "Oxygen",
+      "Ubuntu",
+      "Cantarell",
+      "Fira Sans",
+      "Droid Sans",
+      "Helvetica Neue",
+      "sans-serif"
+    ],
+    serif: [
+      "Constantia",
+      "Lucida Bright",
+      "Lucidabright",
+      "Lucida Serif",
+      "Lucida",
+      "DejaVu Serif",
+      "Bitstream Vera Serif",
+      "Liberation Serif",
+      "Georgia",
+      "serif"
+    ],
+    mono: [
+      "Menlo",
+      "Monaco",
+      "Consolas",
+      "Liberation Mono",
+      "Courier New",
+      "monospace"
+    ]
+  },
 
   /*
   |-----------------------------------------------------------------------------
@@ -187,7 +251,7 @@ module.exports = {
   */
 
   textSizes: {
-    xxs: ".5rem", // 12px
+    xxs: ".5rem", // <12px
     xs: ".75rem", // 12px
     sm: ".875rem",
     smmd: ".93rem", // 14px
@@ -196,8 +260,8 @@ module.exports = {
     xl: "1.25rem", // 20px
     "2xl": "1.5rem", // 24px
     "3xl": "1.875rem", // 30px
-    "4xl": "3.5rem", // 36px
-    "5xl": "5rem", // 48px
+    "4xl": "2.6rem", // 36px
+    "5xl": "4.0rem", // 48px
     "6xl": "6rem"
   },
 
@@ -374,6 +438,8 @@ module.exports = {
     sm: ".125rem",
     default: ".25rem",
     lg: ".5rem",
+    xl: "1.5em",
+    cart: "1.2em",
     full: "9999px"
   },
 
@@ -411,14 +477,10 @@ module.exports = {
     "10": "2.5rem",
     "12": "3rem",
     "16": "4rem",
-    "20": "5rem", // ADDED Fhelipe - responsive btns
     "24": "6rem",
-    "28": "7rem", // ADDED Fhelipe - responsive btns
     "32": "8rem",
-    "40": "10rem",
-    "48": "12rem", // ADDED Fhelipe - responsive btns
+    "48": "12rem",
     "64": "16rem",
-    "80": "22rem",
     "1/2": "50%",
     "1/3": "33.33333%",
     "2/3": "66.66667%",
@@ -432,35 +494,26 @@ module.exports = {
     "5/6": "83.33333%",
     "1/8": "12.5%",
     "3/8": "37.5%",
-    "5/8": "62.5%",
     "7/8": "87.5%",
     "1/16": "6.25%",
-    "30p": "30%",
-    "70p": "70%",
     "100": "100px",
+    "150": "150px",
     "200": "200px",
-    "250": "250px", // ADDED - Fhelipe
+    "250": "250px",
+    "280": "280px",
+    "300": "300px",
+    "400": "400px",
+    "500": "500px",
+    "600": "600px",
+    "650": "650px",
+    "700": "700px",
+    "800": "800px",
+    "900": "900px",
+    "1000": "1000px",
+    auto: "auto",
     full: "100%",
     screen: "100vw",
-    bars: "100px",
-    "300": "300px",
-    "350": "350px",
-    "400": "400px",
-    "450": "450px",
-    "650": "650px",
-    filterlg: "416px",
-    filterxl: "450px",
-    filterxxl: "765px",
-    filterxxxl: "1494px",
-    uploadScreen: "650px",
-    searchBar: "175px",
-    sideMenu: "330px",
-    uploadButton: "320px",
-    liveButton: "150px",
-    sButton: "634px",
-    searchBarLg: "300px", // ADDED - Fhelipe
-    "10000": "10000px",
-    "500": "calc(100vh - 3rem)"
+    "10000": "10000px"
   },
 
   /*
@@ -479,7 +532,6 @@ module.exports = {
   */
 
   height: {
-    "0": "0px",
     auto: "auto",
     px: "1px",
     "1": "0.25rem",
@@ -492,37 +544,33 @@ module.exports = {
     "10": "2.5rem",
     "12": "3rem",
     "16": "4rem",
+    "18": "4.5rem",
+    "20": "5rem",
+    "22": "5.5rem",
     "24": "6rem",
     "32": "8rem",
     "40": "10rem",
     "48": "12rem",
-    "50": "50px",
     "64": "16rem",
-    "90": "90px",
+    "128": "32rem",
     "100": "100px",
-    "105": "105px",
     "150": "150px",
     "200": "200px",
     "250": "250px",
-    "300": "270px",
-    "325": "325px",
-    "350": "356px",
-    "456": "456px", // searchbar
+    "280": "280px",
+    "300": "300px",
     "400": "400px",
-    searchFilter: "500px",
-    full: "100%",
-    screen: "100vh",
-    screenMobile: "calc(100vh - 10%)",
-    uploader: "175px",
-    "500": "calc(100vh - 3rem)",
+    "500": "500px",
     "600": "600px",
-    heightVideoFull: "100vh",
-    heightVideoLg: "75vh",
-    heightVideoMd: "65vh",
-    heightVideoSm: "50vh",
-    navbar: "56px",
-    navbarMobile: "104px",
-    videoHeight: "528px"
+    "650": "650px",
+    "700": "700px",
+    "800": "800px",
+    "900": "900px",
+    "1000": "1000px",
+    "70%": "70%",
+    "90%": "90%",
+    full: "100%",
+    screen: "100vh"
   },
 
   /*
@@ -561,10 +609,9 @@ module.exports = {
 
   minHeight: {
     "0": "0",
-    "15r": "15rem",
-    "500": "500px",
     full: "100%",
-    screen: "100vh"
+    screen: "100vh",
+    seedInfo: "100vh"
   },
 
   /*
@@ -592,11 +639,10 @@ module.exports = {
     "3xl": "80rem",
     "4xl": "90rem",
     "5xl": "100rem",
+    "500": "500px",
     full: "100%",
     sButton: "634px",
-    uploadButton: "320px",
-    almostFull: "1350px",
-    full: "1450px"
+    uploadButton: "320px"
   },
 
   /*
@@ -614,11 +660,6 @@ module.exports = {
   */
 
   maxHeight: {
-    "105": "105px",
-    videoMini: "393px",
-    videoFull: "537px",
-    videoFullXl: "675px",
-    videoFullXxl: "70%",
     full: "100%",
     screen: "100vh"
   },
@@ -640,7 +681,6 @@ module.exports = {
 
   padding: {
     px: "1px",
-    "2px": "2px",
     "0": "0",
     "1": "0.25rem",
     "2": "0.5rem",
@@ -656,6 +696,8 @@ module.exports = {
     "24": "6rem",
     "32": "8rem",
     "48": "12rem",
+    "64": "16rem",
+    "72": "18rem",
     videoPlayerPadding: "27rem"
   },
 
@@ -687,16 +729,12 @@ module.exports = {
     "8": "2rem",
     "10": "2.5rem",
     "12": "3rem",
-    "14": "3.5rem",
     "16": "4rem",
     "20": "5rem",
     "24": "6rem",
+    "28": "7rem",
     "32": "8rem",
-    "48": "12rem", // ADDED Fhelipe
-    "15r": "15rem",
-    "30": "30%", // ADDED Fhelipe (JavaScript Required screen)
-    nmd: "95px",
-    nlg: "56px"
+    halfScreen: "50vh"
   },
 
   /*
@@ -713,6 +751,24 @@ module.exports = {
   | Class name: .-m{side?}-{size}
   |
   */
+
+  negativeMargin: {
+    px: "1px",
+    "0": "0",
+    "1": "0.25rem",
+    "2": "0.5rem",
+    "3": "0.75rem",
+    "4": "1rem",
+    "5": "1.25rem",
+    "6": "1.5rem",
+    "8": "2rem",
+    "10": "2.5rem",
+    "12": "3rem",
+    "16": "4rem",
+    "20": "5rem",
+    "24": "6rem",
+    "32": "8rem"
+  },
 
   /*
   |-----------------------------------------------------------------------------
@@ -736,8 +792,7 @@ module.exports = {
     lg: "0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08)",
     inner: "inset 0 2px 4px 0 rgba(0,0,0,0.06)",
     outline: "0 0 0 3px rgba(52,144,220,0.5)",
-    none: "none",
-    customDivs: "0 20px 25px #000" // ADDED - Fhelipe
+    none: "none"
   },
 
   /*
@@ -760,9 +815,7 @@ module.exports = {
     "20": 20,
     "30": 30,
     "40": 40,
-    "50": 50,
-    dim: 60,
-    nav: 62
+    "50": 50
   },
 
   /*
@@ -783,7 +836,6 @@ module.exports = {
     "25": ".25",
     "50": ".5",
     "75": ".75",
-    "95": ".95", // ADDED - Fhelipe
     "100": "1"
   },
 

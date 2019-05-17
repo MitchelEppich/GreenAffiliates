@@ -9,6 +9,7 @@ import "../scss/home.scss";
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import actions from "../store/actions";
+import Head from "next/head";
 
 class Layout extends Component {
   componentDidMount() {}
@@ -16,7 +17,14 @@ class Layout extends Component {
   componentDidUpdate() {}
 
   render() {
-    return <div>Layout</div>;
+    return (
+      <div className="ga-background pt-32">
+        <Head>
+          <title>Green Affiliates</title>
+        </Head>
+        {this.props.children}
+      </div>
+    );
   }
 }
 

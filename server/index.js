@@ -9,20 +9,7 @@ const { execute, subscribe } = require("graphql");
 const fs = require("fs");
 const http = require("http");
 const https = require("https");
-const https2 = require("spdy");
 const { SubscriptionServer } = require("subscriptions-transport-ws");
-
-// const privateKey = fs.readFileSync("build/cert/growreel.com.key", "utf8");
-// const certificate = fs.readFileSync("build/cert/X509.cert", "utf8");
-// const credentials = {
-//   key: privateKey,
-//   cert: certificate,
-//   ca: [
-//     fs.readFileSync("build/cert/ROOT.cert", "utf8"),
-//     fs.readFileSync("build/cert/PKCS7.cert", "utf8"),
-//     fs.readFileSync("build/cert/INTER.cert", "utf8")
-//   ]
-// };
 
 require("dotenv").config();
 
@@ -42,14 +29,14 @@ const subscriptionsPath = "/subscriptions";
 
 const subscriptionsEndpoint = `wss://localhost:${port}${subscriptionsPath}`;
 
-mongoose.Promise = global.Promise;
-mongoose.connect(
-  process.env.M_URL,
-  { useNewUrlParser: true }
-);
-const db = mongoose.connection;
-db.on("error", console.error.bind(console, "Connection error:"));
-db.once("open", () => console.log("We are connected!"));
+// mongoose.Promise = global.Promise;
+// mongoose.connect(
+//   process.env.M_URL,
+//   { useNewUrlParser: true }
+// );
+// const db = mongoose.connection;
+// db.on("error", console.error.bind(console, "Connection error:"));
+// db.once("open", () => console.log("We are connected!"));
 
 app
   .prepare()
@@ -74,9 +61,9 @@ app
       })
     );
 
-    // server.get("/watch/:_id", (req, res) => {
-    //   app.render(req, res, "/", {});
-    // });
+    server.get("*", (req, res) => {
+      return handle(req, res);
+    });
 
     server.use(
       "/graphql",
@@ -102,34 +89,10 @@ app
       );
     }
 
-    server.get("/", (req, res) => {
-      app.render(req, res, "/", {});
-    });
-
-    // Policy
-    // server.get("/agreement", (req, res) => {
-    //   app.render(req, res, "/agreement", {});
-    // });
-
     // Robots.txt
     server.get("/robots.txt", (req, res) => {
       res.sendFile(__dirname + "/robots.txt");
     });
-
-    // 404
-    // server.get("*", (req, res) => {
-    //   app.render(req, res, "/404", {});
-    // });
-
-    // HTTP Server
-    // Redirect from http port 80 to https
-    // let ws = http.createServer(function(req, res) {
-    //   res.writeHead(301, {
-    //     Location: "https://" + req.headers["host"] + req.url
-    //   });
-    //   res.end();
-    // });
-    // ws.listen(80);
 
     // HTTPS Server
     // const wss = https2.createServer(credentials, server);
