@@ -15,6 +15,10 @@ const resolvers = {
   Query: {
     sendMessage: (_, message) => {
       return message;
+    },
+    sendData: (_, { input }) => {
+      console.log(input);
+      return input.name;
     }
   },
   // User,

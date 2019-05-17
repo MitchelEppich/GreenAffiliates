@@ -13,10 +13,10 @@ const initialState = {};
 
 const indexReducer = (state = initialState, action) => {
   switch (action.type) {
-    // case actionTypes.SET_USERNAME_ERROR:
-    //   return updateObject(state, {
-    //     usernameAuthError: action.error
-    //   });
+    case actionTypes.SEND_DATA:
+      return updateObject(state, {
+        data: action.data
+      });
     default:
       return state;
   }

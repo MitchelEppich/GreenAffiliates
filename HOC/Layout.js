@@ -22,6 +22,9 @@ class Layout extends Component {
         <Head>
           <title>Green Affiliates</title>
         </Head>
+        {this.props.misc.data
+          ? alert(this.props.misc.data.data.sendData)
+          : null}
         {this.props.children}
       </div>
     );

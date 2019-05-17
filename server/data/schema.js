@@ -4,11 +4,18 @@ const resolvers = require("./resolvers");
 const typeDefs = `
 type Query {
   sendMessage(message: String): String
+  sendData(input: DataInput!): String
 }
 
 input EmailInput {
   email: String
   type: String
+}
+
+input DataInput {
+  name: String
+  email: String
+  message: String
 }
 
 type EmailRequest {
