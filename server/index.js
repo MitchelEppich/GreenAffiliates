@@ -1,14 +1,13 @@
 const next = require("next");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const compression = require("compression");
 const express = require("express");
 const mongoose = require("mongoose");
 const { graphqlExpress, graphiqlExpress } = require("apollo-server-express");
 const { execute, subscribe } = require("graphql");
-const fs = require("fs");
-const http = require("http");
-const https = require("https");
+const { createServer } = require("http");
+// const spdy = require("spdy");
+// const fs = require("fs");
 const { SubscriptionServer } = require("subscriptions-transport-ws");
 
 require("dotenv").config();
@@ -18,6 +17,7 @@ const schema = require("./data/schema");
 
 // next.js setup
 const port = process.env.PORT || -1;
+// const url = process.env.URL || "FAILED";
 const url = process.env.URL || "FAILED";
 const dev = process.env.NODE_ENV !== "production";
 const app = next({ dev });
@@ -26,8 +26,8 @@ const handle = app.getRequestHandler();
 const endpointURL = "/graphql";
 const endpointIRL = "/graphiql";
 const subscriptionsPath = "/subscriptions";
-
-const subscriptionsEndpoint = `wss://localhost:${port}${subscriptionsPath}`;
+// const subscriptionsEndpoint = `wss://${url}:${port}${subscriptionsPath}`;
+const subscriptionsEndpoint = `ws://${url}:${port}${subscriptionsPath}`;
 
 // mongoose.Promise = global.Promise;
 // mongoose.connect(
@@ -40,30 +40,18 @@ const subscriptionsEndpoint = `wss://localhost:${port}${subscriptionsPath}`;
 
 app
   .prepare()
-  .then(() => {
+  .then(async () => {
     const server = express();
-
-    server.use(compression());
-
-    server.use(
-      "/static",
-      express.static(__dirname + "/static", {
-        maxAge: "365d"
-      })
-    );
 
     server.use(
       cors({
-        allowedHeaders: ["Content-Type"],
-        origin: "*",
-        methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-        preflightContinue: false
+        origin: "*"
       })
     );
 
-    server.get("*", (req, res) => {
-      return handle(req, res);
-    });
+    // server.get("/watch/:_id", (req, res) => {
+    //   app.render(req, res, "/", {});
+    // });
 
     server.use(
       "/graphql",
@@ -79,27 +67,23 @@ app
         };
       })
     );
-    if (process.env.NODE_ENV === "development") {
-      server.use(
-        "/graphiql",
-        graphiqlExpress({
-          endpointURL: "/graphql",
-          subscriptionsEndpoint: subscriptionsEndpoint
-        })
-      );
-    }
+    server.use(
+      "/graphiql",
+      graphiqlExpress({
+        endpointURL: "/graphql",
+        subscriptionsEndpoint: subscriptionsEndpoint
+      })
+    );
 
-    // Robots.txt
-    server.get("/robots.txt", (req, res) => {
-      res.sendFile(__dirname + "/robots.txt");
+    server.get("*", (req, res) => {
+      return handle(req, res);
     });
 
-    // HTTPS Server
-    // const wss = https2.createServer(credentials, server);
-    const ws = http.createServer(server);
-    ws.listen(port, () => {
-      // remove url before deploying!!
-      console.log(`Apollo Server is now running on http://${url}:${port}`);
+    const ws = createServer(server);
+
+    ws.listen(port, url, () => {
+      // remove url before heroku!!
+      console.log(`Apollo Server is now running on https://${url}:${port}`);
       // Set up the WebSocket for handling GraphQL subscriptions
       new SubscriptionServer(
         {
