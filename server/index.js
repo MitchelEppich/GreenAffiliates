@@ -2,6 +2,7 @@ const next = require("next");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const express = require("express");
+const compression = require("compression");
 const mongoose = require("mongoose");
 const { graphqlExpress, graphiqlExpress } = require("apollo-server-express");
 const { execute, subscribe } = require("graphql");
@@ -48,10 +49,7 @@ app
         origin: "*"
       })
     );
-
-    // server.get("/watch/:_id", (req, res) => {
-    //   app.render(req, res, "/", {});
-    // });
+    server.use(compression());
 
     server.use(
       "/graphql",
@@ -81,8 +79,7 @@ app
 
     const ws = createServer(server);
 
-    ws.listen(port, url, () => {
-      // remove url before heroku!!
+    ws.listen(port, () => {
       console.log(`Apollo Server is now running on https://${url}:${port}`);
       // Set up the WebSocket for handling GraphQL subscriptions
       new SubscriptionServer(
