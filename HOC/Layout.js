@@ -22,9 +22,10 @@ class Layout extends Component {
         <Head>
           <title>Green Affiliates</title>
         </Head>
-        {this.props.misc.data
+        {console.log(this.props.menuOptions)}{" "}
+        {/* {this.props.misc.data
           ? alert(this.props.misc.data.data.sendData)
-          : null}
+          : null} */}
         <div className="greenCard">{this.props.children}</div>
       </div>
     );
@@ -34,8 +35,13 @@ class Layout extends Component {
 const mapDispatchToProps = dispatch => {
   return {};
 };
+const mapStateToProps = state => {
+  return {
+    menuOptions: state.getIn(["misc", "menuOptions"]).toJS()
+  };
+};
 
 export default connect(
-  state => state,
+  mapStateToProps,
   mapDispatchToProps
 )(Layout);

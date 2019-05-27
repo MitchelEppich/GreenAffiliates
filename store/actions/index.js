@@ -20,8 +20,10 @@ const actionTypes = {
 };
 
 const actions = {
-  sendData: data => {
-    console.log(data);
+  sendData: props => {
+    let stuff = props.misc;
+    stuff.data = "adam";
+    
     return dispatch => {
       const link = new HttpLink({ uri, fetch: fetch });
       const operation = {

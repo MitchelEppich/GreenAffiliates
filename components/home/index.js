@@ -1,4 +1,7 @@
 const index = props => {
-  return <div />;
+  let options = props.menuOptions.map((option, i) => (
+    <div key={i}>{option.name}</div>
+  ));
+  return <div>{options}</div>;
 };
 export default index;
