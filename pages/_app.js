@@ -1,17 +1,13 @@
 import React from "react";
 import App, { Container } from "next/app";
 import { Provider } from "react-redux";
-const { fromJS } = require("immutable");
 import withRedux from "next-redux-wrapper";
 import { makeStore } from "../store";
 
 import { detect } from "detect-browser";
 const browser = detect();
 
-export default withRedux(makeStore, {
-  serializeState: state => state.toJS(),
-  deserializeState: state => fromJS(state)
-})(
+export default withRedux(makeStore)(
   class MyApp extends App {
     static async getInitialProps({ Component, router, ctx }) {
       const pageProps = Component.getInitialProps
