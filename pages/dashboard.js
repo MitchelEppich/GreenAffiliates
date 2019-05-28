@@ -7,7 +7,7 @@ import withData from "../lib/withData";
 import { connect } from "react-redux";
 import actions from "../store/actions";
 import selectors from "../store/selectors";
-import Layout from "../HOC/LandingLayout";
+import Layout from "../HOC/DashboardLayout";
 class Index extends Component {
   componentDidMount() {}
 

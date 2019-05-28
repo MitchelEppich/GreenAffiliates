@@ -16,38 +16,19 @@ const uri = "http://localhost:3000/graphql";
 const imports = {};
 
 const actionTypes = {
-  SEND_DATA: "SEND_DATA"
+  SET_MEDIA_SIZE: "SET_MEDIA_SIZE"
 };
 
 const actions = {
-  sendData: data => {
-    console.log(data);
-    return dispatch => {
-      const link = new HttpLink({ uri, fetch: fetch });
-      const operation = {
-        query: query.sendData,
-        variables: { ...data }
-      };
-
-      makePromise(execute(link, operation))
-        .then(data => {
-          dispatch({
-            type: actionTypes.SEND_DATA,
-            data: data
-          });
-        })
-        .catch(error => console.log(error));
+  setMediaSize: input => {
+    return {
+      type: actionTypes.SET_MEDIA_SIZE,
+      input: input.mediaSize
     };
   }
 };
 
-const query = {
-  sendData: gql`
-    query($name: String, $email: String, $message: String) {
-      sendData(input: { name: $name, email: $email, message: $message })
-    }
-  `
-};
+const query = {};
 
 const mutation = {};
 
