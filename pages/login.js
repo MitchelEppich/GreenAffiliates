@@ -8,13 +8,16 @@ import { connect } from "react-redux";
 import actions from "../store/actions";
 import selectors from "../store/selectors";
 import Layout from "../HOC/LandingLayout";
+import LoginScreen from "../components/landing/login";
+
 class Index extends Component {
   componentDidMount() {}
 
   render() {
     return (
       <Layout>
-        <div>{this.props.data}</div>
+        {/* {this.props.data} */}
+        <LoginScreen />
       </Layout>
     );
   }

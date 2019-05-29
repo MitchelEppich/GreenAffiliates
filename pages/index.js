@@ -8,13 +8,25 @@ import { connect } from "react-redux";
 import actions from "../store/actions";
 import selectors from "../store/selectors";
 import Layout from "../HOC/LandingLayout";
+import BannerSection from "../components/landing/home/bannerSection";
+import BrandingSection from "../components/landing/home/brandSection";
+import MerchantSection from "../components/landing/home/merchantSection";
+import ExplainSection from "../components/landing/home/explainSection";
+import VideoSection from "../components/landing/home/videoSection";
+import FeaturesSection from "../components/landing/home/featuresSection";
 class Index extends Component {
   componentDidMount() {}
 
   render() {
     return (
       <Layout>
-        <div>{this.props.data}</div>
+        {/* {this.props.data} */}
+        <BannerSection />
+        <BrandingSection />
+        <MerchantSection />
+        <ExplainSection />
+        <VideoSection />
+        <FeaturesSection />
       </Layout>
     );
   }

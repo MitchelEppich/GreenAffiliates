@@ -1,0 +1,183 @@
+/*******************************************/
+/*This is the main stylesheet***/
+/******************************************/
+
+@tailwind preflight;
+@tailwind utilities;
+
+/******MIXINS*******/
+// Block Element
+// @access public
+// @param {String} $element - Element's name
+@mixin element($element) {
+  &__#{$element} {
+    @content;
+  }
+}
+// Block Modifier
+// @access public
+// @param {String} $modifier - Modifier's name
+@mixin modifier($modifier) {
+  &--#{$modifier} {
+    @content;
+  }
+}
+
+.ga-company-page-list h1 {
+  text-align: center;
+  font-size: 100px;
+}
+.ga-company-directory {
+  background-image: url("../../static/img/home-panel-bg.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 48px;
+  -webkit-box-shadow: 0px 15px 60.89px 0px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 15px 60.89px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 15px 60.89px 0px rgba(0, 0, 0, 0.3);
+}
+.ga-company-directory-wrap {
+  background: linear-gradient(
+    45deg,
+    rgba(8, 181, 88, 0.81),
+    rgba(0, 206, 154, 0.81)
+  );
+  overflow: hidden;
+  border-radius: 48px;
+}
+.ga-company-directory h1 {
+  color: #fff;
+  padding: 50px 0;
+}
+ul.ga-company-list {
+  display: flex;
+  flex-direction: column;
+  max-width: 70%;
+  margin: 0 auto;
+  padding: 0 50px;
+}
+li.ga-company {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  line-height: 70px;
+  position: relative;
+}
+li.ga-company:hover {
+  cursor: pointer;
+}
+li.ga-company h3,
+p.ga-company-excerpt,
+li.ga-company i {
+  display: flex;
+}
+li.ga-company h3,
+p.ga-company-excerpt {
+  color: #fff;
+}
+li.ga-company h3 {
+  font-size: 25px;
+  font-weight: 600;
+}
+p.ga-company-excerpt {
+  border-bottom: 1px solid #fff;
+}
+li.ga-company .ga-company-tab p {
+  line-height: 20px;
+  color: #007752;
+}
+li.ga-company.checked .ga-company-tab:hover {
+  cursor: auto;
+}
+li.ga-company.checked p {
+  border-bottom: 0px;
+}
+li.ga-company i {
+  color: #007752;
+  font-size: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ga-company-tab {
+  max-height: 0;
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 48px;
+  width: 100%;
+  -webkit-box-shadow: 0px 15px 60.89px 0px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 15px 60.89px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 15px 60.89px 0px rgba(0, 0, 0, 0.3);
+  transition: max-height ease-in-out 0.3s;
+}
+.ga-company-tab p {
+  max-width: 800px;
+  width: 100%;
+  padding: 20px 0;
+}
+.ga-company-tab p,
+.ga-company-tab a {
+  visibility: hidden;
+  transition: visibility ease-in-out 0.4s;
+}
+li.ga-company.checked .ga-company-tab p,
+li.ga-company.checked .ga-company-tab a {
+  visibility: visible;
+}
+li.ga-company.checked .ga-company-tab {
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  height: auto;
+  max-height: 600px;
+}
+li.ga-company.checked i {
+  transform: rotate(180deg);
+}
+li.ga-company .ga-company-tab a {
+  padding: 0px 40px;
+  line-height: 50px;
+}
+.ga-company-list-bottom {
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+}
+.ga-company-list-bottom .ga-green-panel-btn:hover {
+  color: #007752;
+  background: #fff;
+  border: 4px solid #fff;
+}
+li.ga-company .ga-company-tab a {
+  transition: all 0.4s ease-in-out;
+}
+@media screen and (max-width: 1367px) {
+  .ga-company-page-list h1 {
+    font-size: 70px;
+  }
+  ul.ga-company-list {
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 991px) {
+  .ga-company-page-list h1 {
+    font-size: 30px;
+  }
+  p.ga-company-excerpt {
+    display: none;
+  }
+  .ga-company-tab {
+    flex-direction: column;
+  }
+  li.ga-company .ga-company-tab p {
+    padding: 20px 30px;
+  }
+  li.ga-company .ga-company-tab a {
+    margin: 0 0 20px 0;
+  }
+}

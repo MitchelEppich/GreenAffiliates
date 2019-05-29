@@ -20,12 +20,12 @@ const actionTypes = {
 };
 
 const actions = {
-  // setMediaSize: input => {
-  //   return {
-  //     type: actionTypes.SET_MEDIA_SIZE,
-  //     input: input.mediaSize
-  //   };
-  // }
+  setMediaSize: input => {
+    return {
+      type: actionTypes.SET_MEDIA_SIZE,
+      input: input.mediaSize
+    };
+  }
 };
 
 const query = {};

@@ -34,6 +34,10 @@ export default class MyDocument extends Document {
           />
           */}
           {/* <link rel="icon" href="static/favicon.ico" /> */}
+          <link
+            href={`https://fonts.googleapis.com/css?family=Lato|Work+Sans:400,600,700&display=swap`}
+            rel="stylesheet"
+          />
         </Head>
         <body>
           <Main />
