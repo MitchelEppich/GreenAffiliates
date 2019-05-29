@@ -17,8 +17,22 @@ import {
   faChartPie,
   faEnvelope,
   faCreditCard,
-  faSlidersH
+  faSlidersH,
+  faStar,
+  faComments,
+  faFlagUsa,
+  faSeedling,
+  faFeather,
+  faTrophy,
+  faCrown,
+  faUserAstronaut,
+  faMoneyCheckAlt,
+  faChartLine,
+  faLongArrowAltUp,
+  faAward
 } from "@fortawesome/free-solid-svg-icons";
+import { faCanadianMapleLeaf } from "@fortawesome/free-brands-svg-icons";
+
 import { library } from "@fortawesome/fontawesome-svg-core";
 library.add(
   faHome,
@@ -29,9 +43,22 @@ library.add(
   faChartPie,
   faEnvelope,
   faCreditCard,
-  faSlidersH
+  faSlidersH,
+  faStar,
+  faCanadianMapleLeaf,
+  faComments,
+  faFlagUsa,
+  faSeedling,
+  faFeather,
+  faTrophy,
+  faCrown,
+  faUserAstronaut,
+  faMoneyCheckAlt,
+  faChartLine,
+  faLongArrowAltUp,
+  faAward
 );
-import "../../scss/home.scss";
+import "../../scss/dashboard/home.scss";
 import actions from "../../store/actions";
 import selectors from "../../store/selectors";
 const dev = process.env.NODE_ENV !== "production";
@@ -40,7 +67,6 @@ import Menu from "./menu";
 
 class Layout extends Component {
   componentDidMount() {
-    let setMediaSize = this.setMediaSize;
     window.addEventListener("resize", this.setMediaSize);
     if (dev) {
       window.addEventListener("keypress", this.printProps);
@@ -49,11 +75,12 @@ class Layout extends Component {
 
   render() {
     return (
-      <div className="pt-12">
-        <Head>
-          <title>{this.props.data}</title>
-        </Head>
-        <div className="greenCard flex justify-between">
+      <div className="ga-panel ga-home">
+        <div className="ga-green-panel">
+          <Head>
+            <title>{this.props.data}</title>
+          </Head>
+          {/* <div className="greenCard flex justify-between">
           {["sm", "md", "lg"].includes(this.props.mediaSize) ? (
             <MobileMenu menuOptions={this.props.menuOptions} />
           ) : (
@@ -61,17 +88,19 @@ class Layout extends Component {
           )}
           <div className="w-4/5 py-12 bg-white rounded-lg">
             {this.props.children}
-          </div>
-          <footer className="w-full">
+          </div> */}
+          {this.props.children}
+          {/* <footer className="w-full">
             <p>
               2019{" "}
               <img
-                class="ga-footer-logo"
+                className="max-w-200"
                 src="../static/img/ga-footer-logo.png"
               />
               All Rights Reserved.
             </p>
-          </footer>
+          </footer> */}
+          <Menu />
         </div>
       </div>
     );
@@ -97,7 +126,7 @@ class Layout extends Component {
       if (
         _width ==
           Math.max(_mediaSizeDim.min, Math.min(_width, _mediaSizeDim.max)) &&
-        this.props.misc.mediaSize != mediaSize
+        this.props.mediaSize != mediaSize
       ) {
         if (["sm", "md"].includes(mediaSize)) {
           this.props.setMediaSize({ mediaSize: mediaSize });
