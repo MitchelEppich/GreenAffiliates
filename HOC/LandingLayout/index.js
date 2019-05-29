@@ -9,8 +9,14 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import Head from "next/head";
 
+import "../../scss/landing/landing.scss";
+import "../../scss/landing/login.scss";
+import "../../scss/landing/signup.scss";
+import "../../scss/landing/companyDirectory.scss";
 import actions from "../../store/actions";
 import selectors from "../../store/selectors";
+import Menu from "./menu/index";
+import Footer from "./footer/index";
 
 class Layout extends Component {
   componentDidMount() {}
@@ -19,14 +25,16 @@ class Layout extends Component {
 
   render() {
     return (
-      <div className="pt-12">
+      <div className="home page-bg">
         <Head>
           <title>{this.props.data}</title>
         </Head>
-        <div className="greenCard flex justify-between">
-          <div className="w-4/5 py-12 bg-white rounded-lg">
-            {this.props.children}
-          </div>
+
+        <div className="ga-body-wrap">
+          <Menu {...this.props} />
+
+          <div className="">{this.props.children}</div>
+          <Footer />
         </div>
       </div>
     );
