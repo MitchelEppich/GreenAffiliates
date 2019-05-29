@@ -26,6 +26,13 @@
 ////////////////////////////////////////
 //----      GENERAL STYLES     ----//
 
+.slow {
+  transition: all 0.3s ease-in-out;
+}
+.slowish {
+  transition: all 0.1s ease-in-out;
+}
+
 .greenCard {
   width: 80%;
   min-height: 100vh;

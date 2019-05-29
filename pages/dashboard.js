@@ -8,13 +8,15 @@ import { connect } from "react-redux";
 import actions from "../store/actions";
 import selectors from "../store/selectors";
 import Layout from "../HOC/DashboardLayout";
+
+import Home from "../components/dashboard/home";
 class Index extends Component {
   componentDidMount() {}
 
   render() {
     return (
       <Layout>
-        <div>{this.props.data}</div>
+        <Home {...this.props} />
       </Layout>
     );
   }
@@ -26,12 +28,10 @@ const mapDispatchToProps = dispatch => {
 
 const makeMapStateToProps = () => {
   const getDataState = selectors.program.makeGetDataState();
-  // const getMenuOptionsState = selectors.home.makeGetMenuOptionsState();
 
   const mapStateToProps = (state, props) => {
     return {
       data: getDataState(state, props)
-      // menuOptions: getMenuOptionsState(state, props)
     };
   };
   return mapStateToProps;

@@ -9,7 +9,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import Head from "next/head";
 
-import "../../scss/home.scss";
+// import "../../scss/home.scss";
 import "../../scss/landing/landing.scss";
 import "../../scss/landing/login.scss";
 import "../../scss/landing/signup.scss";
@@ -48,12 +48,12 @@ const mapDispatchToProps = dispatch => {
 
 const makeMapStateToProps = () => {
   // const getDataState = selectors.program.makeGetDataState();
-  const getMenuOptionsState = selectors.home.makeGetMenuOptionsState();
+  const getMenuOptions = selectors.home.makeGetMenuOptions();
 
   const mapStateToProps = (state, props) => {
     return {
       // data: getDataState(state, props),
-      menuOptions: getMenuOptionsState(state, props)
+      menuOptions: getMenuOptions(state, props)
     };
   };
   return mapStateToProps;
