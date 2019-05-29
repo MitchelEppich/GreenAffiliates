@@ -62,6 +62,16 @@ class Layout extends Component {
           <div className="w-4/5 py-12 bg-white rounded-lg">
             {this.props.children}
           </div>
+          <footer className="w-full">
+            <p>
+              2019{" "}
+              <img
+                class="ga-footer-logo"
+                src="../static/img/ga-footer-logo.png"
+              />
+              All Rights Reserved.
+            </p>
+          </footer>
         </div>
       </div>
     );
@@ -107,14 +117,12 @@ const mapDispatchToProps = dispatch => {
 };
 
 const makeMapStateToProps = () => {
-  // const getDataState = selectors.program.makeGetDataState();
-  const getMenuOptionsState = selectors.home.makeGetMenuOptionsState();
+  const getMenuOptions = selectors.home.makeGetMenuOptions();
   const getMediaSize = selectors.home.makeGetMediaSize();
 
   const mapStateToProps = (state, props) => {
     return {
-      // data: getDataState(state, props),
-      menuOptions: getMenuOptionsState(state, props),
+      menuOptions: getMenuOptions(state, props),
       mediaSize: getMediaSize(state, props)
     };
   };

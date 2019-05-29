@@ -5,7 +5,7 @@ const home = {
   getMenuOptions: (state, props) => {
     return state.misc.menuOptions;
   },
-  makeGetMenuOptionsState: () => {
+  makeGetMenuOptions: () => {
     return createSelector(
       [home.getMenuOptions],
       menuOptions => menuOptions

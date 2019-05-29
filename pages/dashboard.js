@@ -26,12 +26,10 @@ const mapDispatchToProps = dispatch => {
 
 const makeMapStateToProps = () => {
   const getDataState = selectors.program.makeGetDataState();
-  // const getMenuOptionsState = selectors.home.makeGetMenuOptionsState();
 
   const mapStateToProps = (state, props) => {
     return {
       data: getDataState(state, props)
-      // menuOptions: getMenuOptionsState(state, props)
     };
   };
   return mapStateToProps;
