@@ -1,28 +1,28 @@
 const index = props => {
   return (
     <React.Fragment>
-      <div class="ga-settings-title">
+      <div className="ga-settings-title">
         <h1>Account Profile Settings</h1>
 
-        <div class="gaMemberDate">
+        <div className="gaMemberDate">
           (Member Since:<span>Dec 02, 2018</span>)
         </div>
 
-        <div class="gaCompanyIDWrap">
-          <span class="gaCompanyIDLabel">Company ID:</span>
+        <div className="gaCompanyIDWrap">
+          <span className="gaCompanyIDLabel">Company ID:</span>
           <span id="gaCompanyID">#839045</span>
         </div>
       </div>
 
-      <form class="ga-program-form">
-        <div class="ga-photo-file-wrap">
+      <form className="ga-program-form">
+        <div className="ga-photo-file-wrap">
           <h3>Company Profile Photo</h3>
-          <div class="gaProfilePhoto" />
-          <label tabindex="0" for="gaProfileFile" class="input-file-trigger">
+          <div className="gaProfilePhoto" />
+          <label tabindex="0" for="gaProfileFile" className="input-file-trigger">
             Add/Edit Photo
           </label>
-          <input class="input-file" id="gaProfilePhoto" type="file" />
-          <p class="ga-file-return" />
+          <input className="input-file" id="gaProfilePhoto" type="file" />
+          <p className="ga-file-return" />
         </div>
 
         <label for="gaCompanyName">Company Name</label>
@@ -60,7 +60,7 @@ const index = props => {
 
         <label for="gaAccountPass">Account Password</label>
         <input id="gaAccountPass" type="password" placeholder="" />
-        <span class="ga-passChange-notification">
+        <span className="ga-passChange-notification">
           Last Changed Feb 03, 2019
         </span>
 
@@ -68,7 +68,7 @@ const index = props => {
         <input id="gaAccountPass-Confirm" type="password" placeholder="" />
 
         <input
-          class="ga-btn ga-send-btn"
+          className="ga-btn ga-send-btn"
           type="submit"
           value="Update Profile"
         />

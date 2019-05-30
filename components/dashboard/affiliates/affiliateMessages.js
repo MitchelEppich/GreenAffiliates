@@ -2,15 +2,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const index = props => {
   return (
-    <div class="ga-content-panel ga-third-panel ga-affiliate-Messages">
-      <span class="ga-panel-icon">
+    <div className="ga-content-panel ga-third-panel ga-affiliate-Messages">
+      <span className="ga-panel-icon">
         <i>
-          <FontAwesomeIcon icon="comments" className="" />
+          <FontAwesomeIcon icon="comments" classNameName="" />
         </i>
       </span>
       <h2>Affiliate Messages</h2>
-      <span class="ga-panel-data">11</span>
-      <a href="./merchant-messages.html" class="ga-btn ga-view-btn">
+      <span className="ga-panel-data">11</span>
+      <a href="./merchant-messages.html" className="ga-btn ga-view-btn">
         View Messages
       </a>
     </div>

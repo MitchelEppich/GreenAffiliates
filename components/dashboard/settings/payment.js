@@ -1,13 +1,13 @@
 const index = props => {
   return (
     <React.Fragment>
-      <div class="ga-settings-title">
+      <div className="ga-settings-title">
         <h1>Payment Settings</h1>
       </div>
 
-      <form class="ga-affPay-form">
+      <form className="ga-affPay-form">
         <label for="gaCompanyName">First and Last Name (Company Name)</label>
-        <p class="ga-form-description">
+        <p className="ga-form-description">
           Note: Name that payment is made out to
         </p>
         <input id="gaCompanyName" type="text" placeholder="" />
@@ -27,7 +27,7 @@ const index = props => {
         <label for="gaAffPayCountry">Country</label>
         <input id="gaAffPayCountry" type="text" placeholder="" />
 
-        <ul class="ga-payment-radio">
+        <ul className="ga-payment-radio">
           <li>
             <input
               id="gaPaymentCheque"
@@ -39,7 +39,7 @@ const index = props => {
             <label for="gaPaymentCheque">
               <span>Cheque</span>
             </label>
-            <i class="fas fa-money-check-alt" />
+            <i className="fas fa-money-check-alt" />
           </li>
           <li>
             <input
@@ -51,7 +51,7 @@ const index = props => {
             <label for="gaPaymentPaypal">
               <span>Paypal</span>
             </label>
-            <i class="fab fa-cc-paypal" />
+            <i className="fab fa-cc-paypal" />
           </li>
           <li>
             <input
@@ -63,22 +63,22 @@ const index = props => {
             <label for="gaPaymentStripe">
               <span>Stripe</span>
             </label>
-            <i class="fab fa-cc-stripe" />
+            <i className="fab fa-cc-stripe" />
           </li>
         </ul>
 
-        <span class="hide-gaPaypalEmail">
+        <span className="hide-gaPaypalEmail">
           <label for="gaPaypalEmail">Paypal Email Address</label>
           <input id="gaPaypalEmail" type="text" />
         </span>
 
-        <span class="hide-gaStripeEmail">
+        <span className="hide-gaStripeEmail">
           <label for="gaStripeEmail">Stripe Email Address</label>
           <input id="gaStripeEmail" type="text" />
         </span>
 
         <input
-          class="ga-btn ga-send-btn"
+          className="ga-btn ga-send-btn"
           type="submit"
           value="Update Payment Settings"
         />

@@ -9,7 +9,7 @@ const index = props => {
       <input id="gaThirdLink" type="url" placeholder="" />
       <label htmlFor="gaFourthLink">Fourth Link for Promotion</label>
       <input id="gaFourthLink" type="url" placeholder="" />
-      <input class="ga-btn ga-send-btn" type="submit" value="Save Assets" />
+      <input className="ga-btn ga-send-btn" type="submit" value="Save Assets" />
     </React.Fragment>
   );
 };

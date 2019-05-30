@@ -1,19 +1,19 @@
 const index = props => {
   return (
-    <div class="ga-program-file-wrap">
+    <div className="ga-program-file-wrap">
       <h3>Upload Zip File of Image Assets</h3>
-      <label tabIndex="0" htmlFor="gaProgramPhoto" class="input-file-trigger">
+      <label tabIndex="0" htmlFor="gaProgramPhoto" className="input-file-trigger">
         Upload
       </label>
-      <div class="gaProgramPhoto" />
-      <output id="gaProgramFile" class="gaProgramFile" />
+      <div className="gaProgramPhoto" />
+      <output id="gaProgramFile" className="gaProgramFile" />
       <input
-        class="input-file"
+        className="input-file"
         id="gaProgramPhoto"
         type="file"
         name="files[]"
       />
-      <p class="ga-file-return" />
+      <p className="ga-file-return" />
     </div>
   );
 };
