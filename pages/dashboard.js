@@ -15,7 +15,7 @@ class Index extends Component {
 
   render() {
     return (
-      <Layout>
+      <Layout {...this.props}>
         <Home {...this.props} />
       </Layout>
     );

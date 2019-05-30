@@ -1,5 +1,20 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const index = props => {
+  if (!props.router.asPath.includes("dashboard")) {
+    return (
+      <header>
+        <div class="ga-header-content">
+          <div class="ga-welcome">
+            Welcome Back, <span class="">CannHydro</span>
+          </div>
+        </div>
+
+        <div class="ga-profile-img">
+          <img src="../static/img/cannhydro-logo.jpg" alt="cannhydro-logo" />
+        </div>
+      </header>
+    );
+  }
   return (
     <header>
       <div className="ga-header-content">

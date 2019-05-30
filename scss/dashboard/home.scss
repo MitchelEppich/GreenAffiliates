@@ -324,7 +324,7 @@ span.ga-panel-icon i {
 .ga-third-panel .ga-panel-data {
 	font-weight: bold;
 	letter-spacing: -2px;
-	font-size: 60px;
+	font-size: 5rem;
 }
 .ga-traffic-data {
 	display: flex;
@@ -2220,7 +2220,7 @@ span.ga-success-message {
 
 @media screen and (min-width: 1600px ) {
 	.ga-half-panel .ga-panel-data {
-		font-size: 4em;
+		font-size: 5rem;
 	}
 }
 @media screen and (max-width: 1600px ) {
@@ -2228,7 +2228,7 @@ span.ga-success-message {
 		font-size: 18px;
 	}
 	.ga-half-panel .ga-panel-data {
-		font-size: 7em;
+		font-size: 5rem;
 	}
 }
 @media screen and (min-width: 1440px) {
@@ -2384,6 +2384,11 @@ span.ga-success-message {
 		font-size: 30px;
 	}
 }
+@media screen and (max-width:991px){
+	.ga-half-panel .ga-panel-data {
+		font-size: 4rem;
+	}
+}
 @media screen and (max-width: 768px) {
 	.ga-panel {
 		margin: 50px auto;
@@ -2392,23 +2397,24 @@ span.ga-success-message {
 		flex-direction: column;
 	}
 	.ga-panel header {
-    	flex-direction: column;
+    flex-direction: column;
 		justify-content: center;
 		align-items: center;
-    }
-    .ga-content-title {
-	    flex-direction: column;
-    }
-    .gaSort {
-	    padding: 20px 0;
-    }
-    li.ga-message-link {
-	    line-height: 40px;
-    }
-    .ga-profile-img {
-	    order:1;
-    }
-    .ga-header-content {
+	}
+	
+	.ga-content-title {
+		flex-direction: column;
+	}
+	.gaSort {
+		padding: 20px 0;
+	}
+	li.ga-message-link {
+		line-height: 40px;
+	}
+	.ga-profile-img {
+		order:1;
+	}
+	.ga-header-content {
 		order: 2;
 		padding-top: 20px;
 	}

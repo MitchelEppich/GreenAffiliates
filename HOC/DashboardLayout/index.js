@@ -29,7 +29,17 @@ import {
   faMoneyCheckAlt,
   faChartLine,
   faLongArrowAltUp,
-  faAward
+  faAward,
+  faMoneyBillWaveAlt,
+  faClock,
+  faDollarSign,
+  faCheckCircle,
+  faCoins,
+  faUserClock,
+  faBan,
+  faTrash,
+  faSortAmountDown,
+  faPrint
 } from "@fortawesome/free-solid-svg-icons";
 import { faCanadianMapleLeaf } from "@fortawesome/free-brands-svg-icons";
 
@@ -56,7 +66,17 @@ library.add(
   faMoneyCheckAlt,
   faChartLine,
   faLongArrowAltUp,
-  faAward
+  faAward,
+  faMoneyBillWaveAlt,
+  faClock,
+  faDollarSign,
+  faCheckCircle,
+  faCoins,
+  faUserClock,
+  faBan,
+  faTrash,
+  faSortAmountDown,
+  faPrint
 );
 import "../../scss/dashboard/home.scss";
 import actions from "../../store/actions";
@@ -64,6 +84,7 @@ import selectors from "../../store/selectors";
 const dev = process.env.NODE_ENV !== "production";
 import MobileMenu from "./mobileMenu";
 import Menu from "./menu";
+import Header from "./header";
 
 class Layout extends Component {
   componentDidMount() {
@@ -75,32 +96,30 @@ class Layout extends Component {
 
   render() {
     return (
-      <div className="ga-panel ga-home">
+      <div
+        className={`ga-panel ${
+          this.props.router.asPath.includes("dashboard") ? "ga-home" : ""
+        }`}
+      >
         <div className="ga-green-panel">
           <Head>
-            <title>{this.props.data}</title>
+            <title>Green Affiliates</title>
           </Head>
-          {/* <div className="greenCard flex justify-between">
-          {["sm", "md", "lg"].includes(this.props.mediaSize) ? (
-            <MobileMenu menuOptions={this.props.menuOptions} />
-          ) : (
-            <Menu menuOptions={this.props.menuOptions} />
-          )}
-          <div className="w-4/5 py-12 bg-white rounded-lg">
-            {this.props.children}
-          </div> */}
-          {this.props.children}
-          {/* <footer className="w-full">
-            <p>
-              2019{" "}
-              <img
-                className="max-w-200"
-                src="../static/img/ga-footer-logo.png"
-              />
-              All Rights Reserved.
-            </p>
-          </footer> */}
-          <Menu />
+          <div className="ga-panel-wrap">
+            <Header {...this.props} />
+            <div className="ga-content-section">{this.props.children}</div>
+            <footer>
+              <p>
+                2019{" "}
+                <img
+                  class="ga-footer-logo"
+                  src="../static/img/ga-footer-logo.png"
+                />{" "}
+                All Rights Reserved.
+              </p>
+            </footer>
+          </div>
+          <Menu {...this.props} />
         </div>
       </div>
     );

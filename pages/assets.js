@@ -8,13 +8,14 @@ import { connect } from "react-redux";
 import actions from "../store/actions";
 import selectors from "../store/selectors";
 import Layout from "../HOC/DashboardLayout";
+import Assets from "../components/dashboard/assets";
 class Index extends Component {
   componentDidMount() {}
 
   render() {
     return (
-      <Layout>
-        <div>{this.props.data}</div>
+      <Layout {...this.props}>
+        <Assets {...this.props} />
       </Layout>
     );
   }

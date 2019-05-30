@@ -1,0 +1,282 @@
+/*******************************************/
+/*This is the main stylesheet***/
+/******************************************/
+
+@tailwind preflight;
+@tailwind utilities;
+
+/******MIXINS*******/
+// Block Element
+// @access public
+// @param {String} $element - Element's name
+@mixin element($element) {
+  &__#{$element} {
+    @content;
+  }
+}
+// Block Modifier
+// @access public
+// @param {String} $modifier - Modifier's name
+@mixin modifier($modifier) {
+  &--#{$modifier} {
+    @content;
+  }
+}
+
+//// LOGIN CSS /////////
+
+.ga-nav-wrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.ga-nav-wrap nav {
+  width: 100%;
+}
+a.ga-header-logo img {
+  max-width: 400px;
+  width: 100%;
+}
+.ga-login-wrap.ga-login-panel {
+  padding: 0;
+}
+
+.ga-login-wrap.ga-login-panel .ga-green-panel {
+  display: flex;
+  flex-direction: column;
+  height: 900px;
+}
+.ga-login-panel h1 {
+  color: #fff;
+  text-align: center;
+  font-size: 100px;
+  line-height: 100px;
+  padding: 50px 20px;
+}
+form.ga-login-form,
+form.ga-contact-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 0px 30px;
+  height: 100%;
+}
+form.ga-contact-form textarea {
+  font-size: 35px;
+}
+form.ga-contact-form textarea {
+  background: none;
+  background-color: transparent;
+  border-bottom: 3px solid #fff;
+  color: #fff;
+  font-size: 40px;
+  font-weight: 100;
+  letter-spacing: -1px;
+  transition: all ease-in-out 0.3s;
+}
+form.ga-login-form input,
+form.ga-contact-form input,
+form.ga-signup-form-one input {
+  background: none;
+  background-color: transparent;
+  border-bottom: 3px solid #fff;
+  color: #fff;
+  font-size: 40px;
+  font-weight: 100;
+  letter-spacing: -1px;
+  padding: 10px 20px;
+  transition: all ease-in-out 0.3s;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  background: none;
+  background-color: transparent;
+}
+
+form.ga-login-form input:focus,
+form.ga-contact-form input:focus,
+form.ga-signup-form-one input:focus,
+form.ga-signup-form-one textarea:focus,
+form.ga-contact-form textarea:focus {
+  border-bottom: 3px solid #007752;
+  color: #007752;
+  outline: none;
+}
+form.ga-login-form input:focus,
+form.ga-contact-form input:focus,
+form.ga-signup-form-one input:focus {
+  outline: none;
+}
+form.ga-login-form input[type="submit"],
+form.ga-contact-form input[type="submit"],
+form.ga-signup-form-one input[type="submit"] {
+  background-color: #fff;
+  color: #00a576;
+  font-weight: 600;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border-bottom: 0px;
+  border-radius: 4px;
+  cursor: pointer;
+  border-radius: 100px;
+  -webkit-box-shadow: 0px 15px 60.89px 0px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 15px 60.89px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 15px 60.89px 0px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s;
+}
+form.ga-login-form input[type="submit"]:hover,
+form.ga-contact-form input[type="submit"]:hover,
+form.ga-signup-form-one input[type="submit"]:hover {
+  -webkit-box-shadow: 0px 5px 10.89px 0px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 5px 10.89px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 5px 10.89px 0px rgba(0, 0, 0, 0.3);
+}
+.ga-loginlink-wrap {
+  max-width: 600px;
+  width: 100%;
+}
+.ga-signup-link,
+.ga-forgot-link {
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+  transition: all 0.3s;
+}
+.ga-signup-link:hover,
+.ga-forgot-link:hover {
+  color: #007752;
+}
+.ga-loginlink-wrap {
+  margin: 50px auto;
+}
+.ga-login-wrap {
+  background-image: url("../../static/img//green-affiliates-bg-logo.png");
+  background-position: center 150px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 0px 30px;
+}
+.ga-input-file-wrap {
+  border-bottom: 3px solid #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 0 30px 0;
+}
+.input-file-trigger {
+  display: flex;
+  padding: 4px 45px;
+  background: #fff;
+  color: #00a576;
+  border-radius: 100px;
+  font-size: 1em;
+  max-width: 200px;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 15px 60.89px 0px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 15px 60.89px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 15px 60.89px 0px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s;
+  align-items: center;
+  height: 50px;
+}
+.input-file {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 225px;
+  opacity: 0;
+  padding: 14px 0;
+  cursor: pointer;
+}
+.input-file:hover + .input-file-trigger,
+.input-file:focus + .input-file-trigger,
+.input-file-trigger:hover,
+.input-file-trigger:focus {
+  background: #34495e;
+  color: #39d2b4;
+}
+.ga-file-return:not(:empty) {
+  margin: 1em 0;
+}
+.ga-file-return {
+  font-style: italic;
+  font-size: 0.9em;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+  display: flex;
+  max-width: 50%;
+  flex-direction: column;
+}
+.ga-file-return:not(:empty):before {
+  content: "Selected file: ";
+  font-style: normal;
+  font-weight: normal;
+}
+
+@media screen and (min-width: 1368px) {
+}
+@media screen and (max-width: 1367px) {
+}
+@media screen and (max-width: 1250px) {
+}
+@media screen and (min-width: 991px) {
+}
+@media screen and (max-width: 991px) {
+  a.ga-header-logo img {
+    margin: 0 auto;
+  }
+  a.ga-header-logo {
+    margin: 0 auto;
+  }
+  .ga-login-panel h1 {
+    font-size: 70px;
+    line-height: 70px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .ga-login-panel .ga-login-wrap {
+    height: 600px;
+  }
+  .ga-login-panel h1 {
+    font-size: 50px;
+    line-height: 50px;
+  }
+  .ga-login-wrap {
+    background-position: center 100px;
+  }
+  form.ga-login-form input,
+  form.ga-contact-form input,
+  form.ga-contact-form textarea {
+    font-size: 30px;
+  }
+  form.ga-login-form input[type="submit"],
+  form.ga-contact-form input[type="submit"] {
+    font-size: 25px;
+  }
+  .ga-signup-link,
+  .ga-forgot-link {
+    font-size: 17px;
+  }
+}
+@media screen and (min-width: 479px) {
+}
+@media screen and (max-width: 479px) {
+  .ga-login-panel h1 {
+    font-size: 30px;
+    line-height: 30px;
+  }
+}
+
+//////////// END LOGIN ///////////

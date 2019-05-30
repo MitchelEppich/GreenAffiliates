@@ -19,7 +19,7 @@ class Index extends Component {
 
   render() {
     return (
-      <Layout>
+      <Layout {...this.props}>
         {/* {this.props.data} */}
         <BannerSection />
         <BrandingSection />
