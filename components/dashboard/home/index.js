@@ -7,9 +7,6 @@ import ToBePaid from "./toBePaid";
 
 const index = props => {
   return (
-    // <div className="ga-panel-wrap">
-    //   <Header />
-    //   <div className="ga-content-section">
     <React.Fragment>
       <TotalCommissions />
       <TotalTraffic />
@@ -18,8 +15,6 @@ const index = props => {
       <PendingCommissions />
       <ToBePaid />
     </React.Fragment>
-    /* </div>
-    </div> */
   );
 };
 export default index;
