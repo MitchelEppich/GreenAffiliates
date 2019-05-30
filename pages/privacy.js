@@ -14,9 +14,8 @@ class Index extends Component {
 
   render() {
     return (
-      <Layout>
+      <Layout {...this.props}>
         <Privacy {...this.props} />
-        {/* <div>{this.props.data}</div> */}
       </Layout>
     );
   }

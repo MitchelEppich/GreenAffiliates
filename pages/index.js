@@ -21,12 +21,12 @@ class Index extends Component {
     return (
       <Layout {...this.props}>
         {/* {this.props.data} */}
-        <BannerSection />
-        <BrandingSection />
-        <MerchantSection />
-        <ExplainSection />
-        <VideoSection />
-        <FeaturesSection />
+        <BannerSection {...this.props} />
+        <BrandingSection {...this.props} />
+        <MerchantSection {...this.props} />
+        <ExplainSection {...this.props} />
+        <VideoSection {...this.props} />
+        <FeaturesSection {...this.props} />
       </Layout>
     );
   }

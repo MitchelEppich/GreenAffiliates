@@ -14,7 +14,7 @@ class Index extends Component {
 
   render() {
     return (
-      <Layout>
+      <Layout {...this.props}>
         <Program {...this.props} />
       </Layout>
     );

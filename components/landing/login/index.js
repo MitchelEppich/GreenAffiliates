@@ -2,7 +2,7 @@ import React from "react";
 
 const index = props => {
   return (
-    <div>
+    <div className="ga-body-wrap">
       <div className="ga-login-wrap ga-login-panel">
         <div className="ga-green-panel">
           <h1>Login</h1>

@@ -14,10 +14,8 @@ class Index extends Component {
 
   render() {
     return (
-      <Layout>
-        <div className="ga-body-wrap ga-affiliate-landing">
-          <Merchant {...this.props} />
-        </div>
+      <Layout {...this.props}>
+        <Merchant {...this.props} />
       </Layout>
     );
   }

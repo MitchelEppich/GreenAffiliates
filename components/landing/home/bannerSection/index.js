@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import {
   faFacebook,
   faFacebookF,
@@ -27,12 +28,12 @@ const index = props => {
             Affiliate Programs all in one place.
           </p>
           <div className="ga-button-wrap flex flex-row justify-around">
-            <a className="ga-btn ga-white-brdr-btn" href="">
-              Learn More
-            </a>
-            <a className="ga-btn ga-white-btn" href="./signup.html">
-              Join Now
-            </a>
+            <Link href="/affiliate">
+              <a className="ga-btn ga-white-brdr-btn">Learn More</a>
+            </Link>
+            <Link href="/register">
+              <a className="ga-btn ga-white-btn">Join Now</a>
+            </Link>
           </div>
         </div>
 

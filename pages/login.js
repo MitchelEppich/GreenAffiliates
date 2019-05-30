@@ -16,8 +16,7 @@ class Index extends Component {
   render() {
     return (
       <Layout {...this.props}>
-        {/* {this.props.data} */}
-        <LoginScreen />
+        <LoginScreen {...this.props} />
       </Layout>
     );
   }
