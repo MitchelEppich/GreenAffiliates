@@ -13,7 +13,7 @@ const index = props => {
           </div>
         </div>
         <div className="ga-nav-wrap">
-          <a className="ga-header-logo" href="./index.html">
+          <a className="ga-header-logo" href="/">
             <img
               src="../../static/img/green-affiliate-green-logo.png"
               alt="green affiliates"
@@ -22,21 +22,29 @@ const index = props => {
           <nav className="ga-main-menu">
             <ul className="ga-main-menu flex flex-row lg:flex-col justify-around items-center">
               <li>
-                <a className="ga-btn ga-green-btn" href="./login.html">
-                  Login
-                </a>
+                <Link href="/login">
+                  <a className="ga-btn ga-green-btn">Login</a>
+                </Link>
               </li>
               <li className="ga-anim">
-                <a href="./contact.html">Contact Us</a>
+                <Link href="/contact">
+                  <a>Contact Us</a>
+                </Link>
               </li>
               <li className="ga-anim">
-                <a href="./affiliate-landing-page.html">Affiliate</a>
+                <Link href="/affiliate">
+                  <a>Affiliate</a>
+                </Link>
               </li>
               <li className="ga-anim">
-                <a href="./merchant-landing-page.html">Merchant</a>
+                <Link href="/merchant">
+                  <a>Merchant</a>
+                </Link>
               </li>
               <li className="ga-anim">
-                <a href="./company-directory.html">Programs</a>
+                <Link href="/program">
+                  <a>Programs</a>
+                </Link>
               </li>
             </ul>
           </nav>

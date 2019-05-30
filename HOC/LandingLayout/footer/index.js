@@ -1,11 +1,12 @@
 import React from "react";
+import Link from "next/link";
 
 const index = props => {
   return (
     <footer>
       <div className="ga-footer-wrap flex flex-row lg:flex-col justify-between">
         <div className="ga-footer-box ga-box-one">
-          <a href="./index.html">
+          <a href="/">
             <img
               src="../../../static/img/green-affiliate-green-logo.png"
               alt="green affiliates"
@@ -17,16 +18,24 @@ const index = props => {
           <nav className="ga-footer-menu">
             <ul>
               <li className="ga-anim">
-                <a href="./company-directory.html">Company Directory</a>
+                <Link href="/program">
+                  <a>Company Directory</a>
+                </Link>
               </li>
               <li className="ga-anim">
-                <a href="./about.html">About</a>
+                <Link href="/about">
+                  <a>About</a>
+                </Link>
               </li>
               <li className="ga-anim">
-                <a href="./faq.html">FAQ</a>
+                <Link href="/faq">
+                  <a>FAQ</a>
+                </Link>
               </li>
               <li className="ga-anim">
-                <a href="./contact.html">Contact Us</a>
+                <Link href="/contact">
+                  <a>Contact Us</a>
+                </Link>
               </li>
             </ul>
           </nav>
@@ -36,13 +45,19 @@ const index = props => {
           <nav className="ga-footer-menu">
             <ul>
               <li className="ga-anim">
-                <a href="./terms.html">Terms of Use</a>
+                <Link href="/terms">
+                  <a>Terms of Use</a>
+                </Link>
               </li>
               <li className="ga-anim">
-                <a href="./privacy-policy.html">Privacy Policy</a>
+                <Link href="/privacy">
+                  <a>Privacy Policy</a>
+                </Link>
               </li>
               <li className="ga-anim">
-                <a href="./support.html">Support</a>
+                <Link href="/support">
+                  <a>Support</a>
+                </Link>
               </li>
             </ul>
           </nav>

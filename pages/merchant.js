@@ -8,18 +8,20 @@ import { connect } from "react-redux";
 import actions from "../store/actions";
 import selectors from "../store/selectors";
 import Layout from "../HOC/LandingLayout";
+import Merchant from "../components/landing/merchant/";
 class Index extends Component {
   componentDidMount() {}
 
   render() {
     return (
-      <Layout {...this.props}>
-        <div>{this.props.data}</div>
+      <Layout>
+        <div className="ga-body-wrap ga-affiliate-landing">
+          <Merchant {...this.props} />
+        </div>
       </Layout>
     );
   }
 }
-
 const mapDispatchToProps = dispatch => {
   return { sendData: data => dispatch(actions.sendData(data)) };
 };

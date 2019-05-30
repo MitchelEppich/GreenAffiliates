@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const index = props => {
   return (
@@ -26,12 +27,9 @@ const index = props => {
           ullamcorper suscipit drerit in vulputate velit.
         </p>
 
-        <a
-          className="ga-btn ga-green-btn"
-          href="./what-is-affiliate-marketing.html"
-        >
-          Explore More
-        </a>
+        <Link href="/affiliate">
+          <a className="ga-btn ga-green-btn">Explore More</a>
+        </Link>
       </div>
     </div>
   );

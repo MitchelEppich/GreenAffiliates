@@ -8,13 +8,16 @@ import { connect } from "react-redux";
 import actions from "../store/actions";
 import selectors from "../store/selectors";
 import Layout from "../HOC/LandingLayout";
+import Affiliate from "../components/landing/affiliate/";
 class Index extends Component {
   componentDidMount() {}
 
   render() {
     return (
-      <Layout {...this.props}>
-        <div>{this.props.data}</div>
+      <Layout>
+        <div className="ga-body-wrap ga-affiliate-landing">
+          <Affiliate {...this.props} />
+        </div>
       </Layout>
     );
   }
