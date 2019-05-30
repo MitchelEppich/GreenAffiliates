@@ -8,7 +8,7 @@ import { connect } from "react-redux";
 import actions from "../store/actions";
 import selectors from "../store/selectors";
 import Layout from "../HOC/LandingLayout";
-import Merchant from "../components/landing/merchant/";
+import Register from "../components/landing/register/";
 class Index extends Component {
   componentDidMount() {}
 
@@ -16,7 +16,7 @@ class Index extends Component {
     return (
       <Layout>
         <div className="ga-body-wrap ga-affiliate-landing">
-          <Merchant {...this.props} />
+          <Register {...this.props} />
         </div>
         {/* <div>{this.props.data}</div> */}
       </Layout>

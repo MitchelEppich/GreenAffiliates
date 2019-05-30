@@ -7,14 +7,15 @@ import withData from "../lib/withData";
 import { connect } from "react-redux";
 import actions from "../store/actions";
 import selectors from "../store/selectors";
-import Layout from "../HOC/DashboardLayout";
+import Layout from "../HOC/LandingLayout";
+import Program from "../components/landing/program";
 class Index extends Component {
   componentDidMount() {}
 
   render() {
     return (
       <Layout>
-        <div>{this.props.data}</div>
+        <Program {...this.props} />
       </Layout>
     );
   }
@@ -26,11 +27,13 @@ const mapDispatchToProps = dispatch => {
 
 const makeMapStateToProps = () => {
   const getDataState = selectors.program.makeGetDataState();
+  const getCompaniesState = selectors.program.makeGetCompanies();
   // const getMenuOptionsState = selectors.home.makeGetMenuOptionsState();
 
   const mapStateToProps = (state, props) => {
     return {
-      data: getDataState(state, props)
+      data: getDataState(state, props),
+      companyDirectory: getCompaniesState(state, props)
       // menuOptions: getMenuOptionsState(state, props)
     };
   };
