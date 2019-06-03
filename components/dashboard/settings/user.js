@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 const index = props => {
   return (
     <React.Fragment>
@@ -78,10 +80,11 @@ const index = props => {
       </div>
       <div className="ga-message-overlay">
         <div className="popup-content">
-          <i className="far fa-times-circle close" />
+          <i>
+            <FontAwesomeIcon icon="times-circle" className="" />
+          </i>
           <h2>Confirm</h2>
           <p>Are you sure you want to delete this user?</p>
-
           <span>
             <a className="ga-btn ga-view-btn confirm-deletion" href="#">
               Confirm Deletion

@@ -72,6 +72,9 @@ app
         subscriptionsEndpoint: subscriptionsEndpoint
       })
     );
+    server.get("/settings/:type", (req, res) => {
+      return app.render(req, res, "/settings", req.query);
+    });
 
     server.get("*", (req, res) => {
       return handle(req, res);

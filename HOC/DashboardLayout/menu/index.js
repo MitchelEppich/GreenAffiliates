@@ -109,6 +109,12 @@ const index = props => {
 };
 
 let path = (router, pathName) => {
+  if (pathName == "payment") {
+    return router.asPath.includes(pathName) &&
+      !router.asPath.includes("settings")
+      ? "active"
+      : "";
+  }
   return router.asPath.includes(pathName) ? "active" : "";
 };
 

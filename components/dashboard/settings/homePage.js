@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 const index = props => {
   return (
     <React.Fragment>
@@ -46,7 +48,9 @@ const index = props => {
             </div>
           </label>
           <label className="ga-home-check">
-            <span className="ga-desc">Total amount of traffic from program</span>
+            <span className="ga-desc">
+              Total amount of traffic from program
+            </span>
             <div className="ga-homescreen-inputs">
               <span>Traffic</span>
               <input type="checkbox" name="radio" />
@@ -72,7 +76,12 @@ const index = props => {
 
           <a
             className="ga-btn ga-view-btn save-homepage"
-            style="background:#006845;color:#fff;font-size: 20px;margin-top:30px;"
+            style={{
+              background: "#006845",
+              color: "#fff",
+              fontSize: "20px",
+              marginTop: "30px"
+            }}
           >
             Save Settings
           </a>
@@ -81,7 +90,9 @@ const index = props => {
 
       <div className="ga-message-overlay">
         <div className="popup-content">
-          <i className="far fa-times-circle close" />
+          <i>
+            <FontAwesomeIcon icon="times-circle" className="" />
+          </i>
           <h2>Home Screen Updated!</h2>
           <p>
             All panels on the front page have been updated to reflect your

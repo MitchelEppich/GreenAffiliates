@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 const index = props => {
   return (
     <React.Fragment>
@@ -18,7 +20,11 @@ const index = props => {
         <div className="ga-photo-file-wrap">
           <h3>Company Profile Photo</h3>
           <div className="gaProfilePhoto" />
-          <label tabindex="0" for="gaProfileFile" className="input-file-trigger">
+          <label
+            tabindex="0"
+            for="gaProfileFile"
+            className="input-file-trigger"
+          >
             Add/Edit Photo
           </label>
           <input className="input-file" id="gaProfilePhoto" type="file" />

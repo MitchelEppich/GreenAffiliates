@@ -1,17 +1,53 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
+
 const index = props => {
   if (!props.router.asPath.includes("dashboard")) {
     return (
       <header>
-        <div class="ga-header-content">
-          <div class="ga-welcome">
-            Welcome Back, <span class="">CannHydro</span>
-          </div>
-        </div>
+        {props.router.asPath.includes("settings") ? (
+          <React.Fragment>
+            <div className="ga-header-content-row">
+              <div class="ga-back-nav">
+                <Link href="/settings">
+                  <a>
+                    <i>
+                      <FontAwesomeIcon
+                        icon="arrow-alt-circle-left"
+                        className=""
+                      />
+                    </i>
+                    <span>Back</span>
+                  </a>
+                </Link>
+              </div>
+              <div className="ga-welcome">
+                Welcome Back, <span className="">CannHydro</span>
+              </div>
+            </div>{" "}
+            <div className="ga-profile-img">
+              <img
+                src="../static/img/cannhydro-logo.jpg"
+                alt="cannhydro-logo"
+              />
+            </div>
+          </React.Fragment>
+        ) : (
+          <React.Fragment>
+            <div className="ga-header-content">
+              <div className="ga-welcome">
+                Welcome Back, <span className="">CannHydro</span>
+              </div>
+            </div>
 
-        <div class="ga-profile-img">
-          <img src="../static/img/cannhydro-logo.jpg" alt="cannhydro-logo" />
-        </div>
+            <div className="ga-profile-img">
+              <img
+                src="../static/img/cannhydro-logo.jpg"
+                alt="cannhydro-logo"
+              />
+            </div>
+          </React.Fragment>
+        )}
       </header>
     );
   }

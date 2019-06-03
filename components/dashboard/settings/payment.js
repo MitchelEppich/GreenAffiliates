@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 const index = props => {
   return (
     <React.Fragment>
@@ -39,7 +41,9 @@ const index = props => {
             <label for="gaPaymentCheque">
               <span>Cheque</span>
             </label>
-            <i className="fas fa-money-check-alt" />
+            <i>
+              <FontAwesomeIcon icon="money-check-alt" className="" />
+            </i>
           </li>
           <li>
             <input
@@ -51,7 +55,9 @@ const index = props => {
             <label for="gaPaymentPaypal">
               <span>Paypal</span>
             </label>
-            <i className="fab fa-cc-paypal" />
+            <i>
+              <FontAwesomeIcon icon="cc-paypal" className="" />
+            </i>
           </li>
           <li>
             <input
@@ -63,7 +69,9 @@ const index = props => {
             <label for="gaPaymentStripe">
               <span>Stripe</span>
             </label>
-            <i className="fab fa-cc-stripe" />
+            <i>
+              <FontAwesomeIcon icon="cc-stripe" className="" />
+            </i>
           </li>
         </ul>
 
