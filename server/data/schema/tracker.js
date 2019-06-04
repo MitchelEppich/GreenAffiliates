@@ -1,5 +1,5 @@
 let Query = `
-    Tracker(input: GetTrackerInput): Tracker
+    tracker(input: GetTrackerInput): Tracker
 `;
 
 let Mutation = `

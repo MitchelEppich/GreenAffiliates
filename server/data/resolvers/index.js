@@ -11,50 +11,46 @@ const emailTemplates = require("../emails");
 
 // const s3Bucket = process.env.S3_BUCKET;
 
-const resolvers = {
-  Query: {
-    sendMessage: (_, message) => {
-      return message;
-    },
-    sendData: (_, { input }) => {
-      console.log(input);
-      return input.name;
-    }
-  },
-  // User,
-  // Subscription: {},
-  Mutation: {
-    sendEmail: async (_, { input }) => {
-      let url = await resolvers.Mutation.createPasswordResetURL(_, input.email);
+const Address = require("./address");
+const Affiliate = require("./affiliate");
+const Commission = require("./commission");
+const CommissionArchived = require("./commissionArchived");
+const Goal = require("./goal");
+const Media = require("./media");
+const Merchant = require("./merchant");
+const Message = require("./message");
+const Misc = require("./misc");
+const Product = require("./product");
+const Tracker = require("./tracker");
+const Category = require("./category");
 
-      let transporter = nodemailer.createTransport({
-        service: "gmail",
-        auth: {
-          user: "",
-          pass: ""
-        }
-      });
+let imports = [
+  Address,
+  Affiliate,
+  Commission,
+  CommissionArchived,
+  Goal,
+  Media,
+  Merchant,
+  Message,
+  Misc,
+  Product,
+  Tracker,
+  Category
+];
 
-      // let mailOptions;
-      // switch (input.type) {
-      //   case "welcome":
-      //     mailOptions = emailTemplates.welcome({
-      //       ...input,
-      //       username: (await UserResolvers.Query.user(_, {
-      //         email: input.email
-      //       })).username,
-      //       url: url
-      //     });
-      //     break;
-      // }
+let resolvers = {};
 
-      transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-          // nothing
-        }
-      });
-    }
+for (let i = 0; i < imports.length; i++) {
+  let _ = imports[i];
+  if (_ == null) continue;
+  let $ = Object.keys(_);
+  for (let x of $) {
+    let value = _[x];
+    if (value == undefined || Object.keys(value).length == 0) continue;
+    if (resolvers[x] == null) resolvers[x] = {};
+    resolvers[x] = { ...resolvers[x], ...value };
   }
-};
+}
 
 module.exports = resolvers;
