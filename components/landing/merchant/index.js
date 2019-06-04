@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const index = props => {
   return (
@@ -27,13 +28,9 @@ const index = props => {
               erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci
               tation ullamcorper suscipit drerit in vulputate velit.
             </p>
-
-            <a
-              className="ga-btn ga-green-btn"
-              href="./merchant-signup-step-one.html"
-            >
-              Sign Up
-            </a>
+            <Link href="/register">
+              <a className="ga-btn ga-green-btn">Sign Up</a>
+            </Link>
           </div>
         </div>
 
@@ -92,13 +89,9 @@ const index = props => {
               erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci
               tation ullamcorper suscipit drerit in vulputate velit.
             </p>
-
-            <a
-              className="ga-btn ga-green-btn-action"
-              href="./merchant-signup-step-one.html"
-            >
-              Sign Up
-            </a>
+            <Link href="/register">
+              <a className="ga-btn ga-green-btn-action">Sign Up</a>
+            </Link>
           </div>
         </div>
       </article>

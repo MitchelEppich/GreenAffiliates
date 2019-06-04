@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const index = props => {
   return (
@@ -36,12 +37,9 @@ const index = props => {
               other program like this on planet earth that allows you to access
               millions of laser targeted customers.
             </p>
-            <a
-              className="ga-btn ga-white-btn"
-              href="./merchant-signup-step-one.html"
-            >
-              Signup
-            </a>
+            <Link href="/register">
+              <a className="ga-btn ga-white-btn">Signup</a>
+            </Link>
           </div>
         </div>
       </div>

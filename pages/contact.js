@@ -14,8 +14,8 @@ class Index extends Component {
 
   render() {
     return (
-      <Layout>
-        <Contact />
+      <Layout {...this.props}>
+        <Contact {...this.props} />
       </Layout>
     );
   }
