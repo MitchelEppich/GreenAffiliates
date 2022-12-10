@@ -23,7 +23,7 @@
     "detect-browser": "^4.1.0",
     "dotenv": "^6.0.0",
     "emit-file-loader": "^0.0.2",
-    "express": "^4.16.3",
+    "express": "^4.17.3",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^2.0.0",
     "fs": "^0.0.1-security",
